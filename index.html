@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Getting Familiar with CSS3 Transition</title>
+    <link rel="stylesheet" href="css/css3transition.css" />
+    [ 48 ]
+</head>
+
+<body>
+    <header>
+        <h1>Getting Familiar with CSS3 Transition</h1>
+    </header>
+    Chapter 3
+    5.
+    <section id="game">
+        <div id="cards">
+            <div id="card1" class="card cardAK"></div>
+            <div id="card2" class="card cardAQ"></div>
+        </div> <!-- #cards -->
+    </section> <!-- #game -->
+    <footer>
+        <p>This is an example of transitioning cards.</p>
+    </footer>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#card1").addClass("move-and-scale");
+            $("#card2").addClass("rotate-right");
+        });
+    </script>
+
+</body>
+
+</html>
