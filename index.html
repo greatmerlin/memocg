@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>Getting Familiar with CSS3 Transition</title>
-    <link rel="stylesheet" href="css/css3transition.css" />
+    <!-- <link rel="stylesheet" href="css/css3transition.css" /> -->
+    <link rel="stylesheet" href="css/css3flip.css" />
+
     [ 48 ]
 </head>
 
@@ -14,21 +16,54 @@
     </header>
     Chapter 3
     5.
-    <section id="game">
+    <!-- 
+     <section id="game">
         <div id="cards">
             <div id="card1" class="card cardAK"></div>
             <div id="card2" class="card cardAQ"></div>
+        </div> <!-- #cards 
+    </section> <!-- #game 
+    -->
+
+    <section id="game">
+        <div id="cards">
+            <div class="card">
+                <div class="face front"></div>
+                <div class="face back cardAK"></div>
+            </div> <!-- .card -->
+            <div class="card">
+                <div class="face front"></div>
+                <div class="face back cardAQ"></div>
+            </div> <!-- .card -->
         </div> <!-- #cards -->
     </section> <!-- #game -->
+
     <footer>
         <p>This is an example of transitioning cards.</p>
     </footer>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script>
-        $(function () {
-            $("#card1").addClass("move-and-scale");
-            $("#card2").addClass("rotate-right");
-        });
+
+        /*         $(function () {
+                    $("#card1").addClass("move-and-scale");
+                    $("#card2").addClass("rotate-right");
+                }); */
+
+        (function ($) {
+            $(function () {
+                $("#cards").children().each(function (index) {
+                    // listen the click event on each card DIV element.
+                    $(this).click(function () {
+                        // add the class "card-flipped".
+                        // the browser will animate the styles
+                        // between current state and card-flipped state.
+                        $(this).toggleClass("card-flipped");
+                    });
+                });
+            });
+        })(jQuery);
+
+
     </script>
 
 </body>
